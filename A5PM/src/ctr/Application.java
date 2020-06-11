@@ -13,6 +13,7 @@ public class Application {
 	
 	public static void tryModifiableList(List<String> list){
 		System.out.println(list.toString());
+		//Teste ob Liste verändert werden kann:
 		try {
 			list.remove(2);
 			System.out.println("Funktioniert...");
@@ -50,7 +51,7 @@ public class Application {
 		
 		String[] stringArray = { "Explorer", "Chrome", "Spotify", "GitHub", "Bash", "FireFox" };
 
-		List<String> unmodifiableList = Collections.unmodifiableList(Arrays.asList(stringArray));
+		List<String> unmodifiableList = Collections.unmodifiableList(Arrays.asList(stringArray)); //UnmodifiableList Initialisiert mit + stringArray füllen
 		List<String> modifiableList = new ArrayList<String>();
 		
 		for(String s: stringArray) {
@@ -78,7 +79,7 @@ public class Application {
 		//c-------------------------------------------------------------------------------------
 
 	
-		System.out.println(SensorAggregator.getMax("VPdef (mbar)","01.01.2009 00:00:00" , "01.02.2009 23:50:00"));
+		System.out.println(SensorAggregator.getMax("H2OC (mmol/mol)","01.01.2009 00:00:00" , "01.02.2009 23:50:00"));
 	
 	}
 }
