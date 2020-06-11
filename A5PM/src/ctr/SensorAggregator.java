@@ -42,24 +42,31 @@ public class SensorAggregator implements Comparator<String> {
 		String firstLine = csvReader.readLine();
 		int spalteName = 0;
 		int ifSpalteName = 0;
+		boolean isValidSensorName = false;
 
-		for (String s : firstLine.split(",")) {
+		for (String s : firstLine.split(",")) { // Extrahiere Position vom Sensorname
 
 			if (s.equalsIgnoreCase("\"" + sensorName + "\"")) {
 				ifSpalteName = spalteName;
+				isValidSensorName = true;
 			}
 			spalteName++;
+		}
+
+		if (!isValidSensorName) {
+			System.err.println("wrong Sensorname...");
+			return 0.00;
 		}
 
 		System.out.println(ifSpalteName);
 		final int finalInt = ifSpalteName;
 
 		@SuppressWarnings("resource")
-		Stream<String> names = Files.lines(Paths.get(path));
+		Stream<String> names = Files.lines(Paths.get(path)); // Initialisiere Stream mit angegebenen Path
 
 		DoubleSummaryStatistics maxDouble = names.sorted().skip(1).filter(x -> {
 			try {
-				return SensorAggregator.isInRangeDateFormat(x, from, to);
+				return SensorAggregator.isInRangeDateFormat(x, from, to);// Wenn x in Datumsbeschränkung liegt
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
@@ -91,5 +98,3 @@ public class SensorAggregator implements Comparator<String> {
 	}
 
 }
-
-

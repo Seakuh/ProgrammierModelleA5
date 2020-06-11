@@ -77,19 +77,8 @@ public class Application {
 		
 		//c-------------------------------------------------------------------------------------
 
-		//SensorAggregator sensorAggregator = new SensorAggregator("C:\\Users\\Dizzle\\Desktop\\Informatik\\4.Semester\\Programmiermodelle\\Aufgaben\\A5\\jena.csv");
-		//double sensorMax = SensorAggregator.getMax("VPmax", "01.01.2009", "04.01.2009");
-		//sensorAggregator.testBufferedReader();
-		
-//		long sum= IntStream
-//				.rangeClosed(1, 5)
-//				.map(v->v*v)
-//				.sum();
-		
-//		System.out.println(sum);
-		//System.out.println("getMax: " + SensorAggregator.getMax("Sensor", "", ""));
-		
-		System.out.println(SensorAggregator.getMax("T (degC)","02.01.2009 00:00:00" , "02.01.2009 23:50:00"));
+	
+		System.out.println(SensorAggregator.getMax("VPmax","02.01.2009 00:00:00" , "02.01.2009 23:50:00"));
 	
 	}
 }
