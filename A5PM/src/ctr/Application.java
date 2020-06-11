@@ -78,7 +78,7 @@ public class Application {
 		//c-------------------------------------------------------------------------------------
 
 	
-		System.out.println(SensorAggregator.getMax("VPmax","02.01.2009 00:00:00" , "02.01.2009 23:50:00"));
+		System.out.println(SensorAggregator.getMax("VPdef (mbar)","01.01.2009 00:00:00" , "01.02.2009 23:50:00"));
 	
 	}
 }
