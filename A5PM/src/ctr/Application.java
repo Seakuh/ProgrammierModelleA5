@@ -71,6 +71,7 @@ public class Application {
 		Dog fridulin = new Dog("Fridulin", 64);
 		
 		DogWrapper dogWrapper = new DogWrapper(georg, fridulin);
+		georg.setSize(34);
 		
 		System.out.println(dogWrapper.getSmallDog().toString());
 		

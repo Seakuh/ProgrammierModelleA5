@@ -20,22 +20,25 @@ class Dog {
 
 
 
-	void setName(String name) {
+	public Dog setName(String name) {
 		if (name == null) {
 			throw new IllegalArgumentException();
 		}
-		new Dog(name, size);
 
 		if (size < 0 || size > 100) {
 			throw new IllegalArgumentException();
 		}
+		
+		return new Dog(name, size);
+
+
 	}
 
 	
-	void setSize(int size) {
+	public Dog setSize(int size) {
 		if (size < 0 || size > 100)
 			throw new IllegalArgumentException();
-		new Dog(name,size);
+		return new Dog(name,size);
 	}
 	
 	@Override
